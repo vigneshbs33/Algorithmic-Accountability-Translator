@@ -8,7 +8,6 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/NLP-Product-8b5cf6?style=for-the-badge" alt="NLP Product" />
-  <img src="https://img.shields.io/badge/Made%20with-❤️-ff6b6b?style=for-the-badge" alt="Made with Love" />
   <img src="https://img.shields.io/badge/Open%20Source-100%25-10b981?style=for-the-badge" alt="Open Source" />
 </div>
 
