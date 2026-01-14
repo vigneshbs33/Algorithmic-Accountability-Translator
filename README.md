@@ -44,19 +44,6 @@
 
 ---
 
-## 🖥️ Screenshots
-
-### Beautiful Dashboard
-Visualize diversity scores, bias distribution, and filter bubble formation with interactive charts.
-
-### Smart Analysis
-Radar charts comparing personas, timeline showing how quickly bubbles form.
-
-### AI-Generated Contracts
-Plain-language reports explaining exactly what the algorithm is doing to your feed.
-
----
-
 ## ✨ Features
 
 ### 🔍 **Filter Bubble Detection**
