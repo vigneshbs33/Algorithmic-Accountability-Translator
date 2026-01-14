@@ -299,9 +299,7 @@ copies of the Software.
   <strong>⭐ Star this repo if you find it useful!</strong>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Made%20in%20India-🇮🇳-ff9933?style=for-the-badge" alt="Made in India" />
-</p>
+
 
 <p align="center">
   <b>AlgoTranslator - Making AI Algorithms Transparent for Everyone</b><br/>
