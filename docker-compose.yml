@@ -1,0 +1,154 @@
+version: '3.8'
+
+services:
+  # ===================
+  # Backend API
+  # ===================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aat-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=algorithmic_accountability
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=algorithmic_accountability
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    depends_on:
+      - postgres
+      - mongodb
+      - redis
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - aat-network
+
+  # ===================
+  # Frontend
+  # ===================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aat-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    command: npm run dev
+    networks:
+      - aat-network
+
+  # ===================
+  # Celery Worker
+  # ===================
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aat-celery
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=algorithmic_accountability
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=algorithmic_accountability
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    depends_on:
+      - postgres
+      - mongodb
+      - redis
+    command: celery -A tasks worker --loglevel=info
+    networks:
+      - aat-network
+
+  # ===================
+  # PostgreSQL Database
+  # ===================
+  postgres:
+    image: postgres:16-alpine
+    container_name: aat-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=algorithmic_accountability
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - aat-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ===================
+  # MongoDB Database
+  # ===================
+  mongodb:
+    image: mongo:7
+    container_name: aat-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - aat-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ===================
+  # Redis Cache
+  # ===================
+  redis:
+    image: redis:7-alpine
+    container_name: aat-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - aat-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# ===================
+# Networks
+# ===================
+networks:
+  aat-network:
+    driver: bridge
+
+# ===================
+# Volumes
+# ===================
+volumes:
+  postgres_data:
+  mongodb_data:
+  redis_data:

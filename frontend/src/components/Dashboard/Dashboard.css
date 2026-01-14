@@ -1,0 +1,60 @@
+/* Dashboard styles */
+
+.dashboard {
+    animation: fadeIn 0.3s ease;
+}
+
+.findings-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.finding-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+}
+
+.finding-icon {
+    color: var(--color-warning);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.finding-item span {
+    line-height: 1.5;
+}
+
+/* Recharts tooltip customization */
+.recharts-tooltip-wrapper {
+    outline: none !important;
+}
+
+.recharts-default-tooltip {
+    background: var(--color-bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.recharts-tooltip-label {
+    color: var(--color-text-primary) !important;
+    font-weight: 600 !important;
+}
+
+.recharts-tooltip-item {
+    color: var(--color-text-secondary) !important;
+}
+
+/* Chart legend */
+.recharts-legend-wrapper {
+    padding-top: var(--space-md) !important;
+}
+
+.recharts-legend-item-text {
+    color: var(--color-text-secondary) !important;
+}

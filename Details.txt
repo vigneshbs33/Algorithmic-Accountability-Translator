@@ -1,0 +1,38 @@
+# Algorithmic Accountability Translator
+
+## Project Overview
+
+This project was created by **Vignesh B S** as an NLP (Natural Language Processing) research project to help people understand how social media recommendation algorithms work.
+
+### The Problem It Solves
+
+Social media platforms use complex algorithms to decide what content to show you. These algorithms often create "filter bubbles" where you only see content that agrees with your existing views. This project:
+
+1. Collects data from platforms like Reddit and YouTube
+2. Analyzes the patterns in what gets recommended
+3. Generates easy-to-understand reports explaining algorithm behavior
+
+### Key Features
+
+- **10 Synthetic User Personas** - Different user types to test algorithm behavior
+- **Reddit & YouTube Scrapers** - Ethical data collection with rate limiting
+- **NLP Analysis Pipeline** - Topic modeling, bias detection, stance detection
+- **Echo Chamber Detection** - Identifies when users are trapped in bubbles
+- **Plain Language Reports** - AI-generated explanations anyone can understand
+
+### Technology Stack
+
+- **Backend**: Python, FastAPI, PostgreSQL, MongoDB, Redis
+- **NLP/ML**: BERTopic, Transformers, SpaCy, XGBoost
+- **Frontend**: React, TypeScript, Recharts
+- **Infrastructure**: Docker, Celery
+
+---
+
+**Author**: Vignesh B S  
+**Year**: 2026  
+**License**: MIT License
+
+---
+
+*This project promotes algorithmic transparency and digital literacy.*

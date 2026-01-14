@@ -1,0 +1,58 @@
+/* Analysis page styles */
+
+.analysis-page {
+    animation: fadeIn 0.3s ease;
+}
+
+.analysis-content {
+    margin-top: var(--space-lg);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.insight-card {
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.insight-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.insight-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.insight-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}

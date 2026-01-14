@@ -1,0 +1,50 @@
+/* Personas page styles */
+
+.personas-page {
+    animation: fadeIn 0.3s ease;
+}
+
+.leaning-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: var(--space-xs);
+}
+
+.persona-description {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: var(--space-md) 0;
+    line-height: 1.5;
+}
+
+.interest-tag.more {
+    background: var(--color-accent-primary);
+    color: white;
+}
+
+.persona-subreddits {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.875rem;
+}
+
+.subreddits-label {
+    color: var(--color-text-muted);
+    margin-right: var(--space-xs);
+}
+
+.subreddits-list {
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.persona-action {
+    width: 100%;
+    margin-top: var(--space-lg);
+}

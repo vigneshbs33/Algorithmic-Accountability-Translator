@@ -1,0 +1,189 @@
+# Algorithmic Accountability Translator
+# Created by Vignesh B S
+# Copyright (c) 2026 All Rights Reserved
+
+# ======================
+# Python
+# ======================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ======================
+# Node.js / Frontend
+# ======================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+frontend/dist/
+frontend/build/
+.next/
+out/
+
+# ======================
+# Environment & Secrets
+# ======================
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+# ======================
+# IDE & Editors
+# ======================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (PyCharm, WebStorm)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ======================
+# Operating System
+# ======================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ======================
+# Docker
+# ======================
+
+.docker/
+
+# ======================
+# Data & Models
+# ======================
+
+# Data files (keep structure, ignore large files)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Trained models
+models/*.pkl
+models/*.pt
+models/*.bin
+models/*.h5
+!models/.gitkeep
+
+# Large files
+*.csv
+*.json
+!package.json
+!tsconfig.json
+!tsconfig.node.json
+*.parquet
+*.pickle
+*.pkl
+
+# ======================
+# Logs
+# ======================
+
+logs/
+*.log
+
+# ======================
+# Temporary Files
+# ======================
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+# ======================
+# Celery
+# ======================
+
+celerybeat-schedule
+celerybeat.pid
